@@ -24,8 +24,7 @@ public class Manage {
     void displayData(){
         System.out.printf("code|   Title   |Quantity|Lended| Price | Value\n");
         System.out.println("------------------------------------------------");
-//        bl.traverse();
-        bl.printData();
+        bl.traverse();
     }
     //(2)-------------------------------
     void addToEnd(){      
@@ -162,57 +161,18 @@ public class Manage {
 //Lending----------------------------------------------------------------------
     Book b = new Book();
 //(1)-------------------------------
-    void inputData() throws IOException{ 
-        ll.clear();
-        bl.loadFileBook("Book.txt");
-        
-        // check bcode in the books list
+    void inputData(){ 
         System.out.print("Enter book code: ");
         String bcode = Validate.checkInputString();
-        if(bl.search(bcode)==null){
-            System.err.println("not accepted");
-            return;
-        }
-        rl.loadFileReader("Reader.txt");
-        // check bcode in the books list
         System.out.print("Enter reader code: ");
         String rcode = Validate.checkInputString();
-        if(rl.search(rcode)==null){
-            System.err.println("not accepted");
-            return;
-        }
         System.out.print("Enter state: ");
         int state = Validate.checkInputInt();
-        if(state == 1){
-            System.err.println("not accepted");
-            return;
-        }
-        if(b.getLended()== b.getQuantity() && state == 0){
-            ll.addLast(new Lending(bcode, rcode, state));
-        }
-        if(b.getLended()== b.getQuantity() && state == 1){
-            b.lended+=1;
-            ll.addLast(new Lending(bcode, rcode, state));
-        }  
+        ll.addLast(new Lending(bcode, rcode, state));
     }
 //(2)-------------------------------
     void printData() {
         ll.traverse();
     }
 //(3)-------------------------------
-    void sort() {   
-        System.out.println("1. Sort by bcode");
-        System.out.println("2. Sort by rcode");
-        int choice = Validate.checkInputInt();
-        switch(choice){
-            case 1:                   
-                bl.sortByBCode();
-                bl.traverse();
-                break;
-            case 2:                   
-                rl.sortByRCode();
-                bl.traverse();
-                break;           
-        }
-    } 
 }
