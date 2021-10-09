@@ -97,17 +97,4 @@ public class ReaderList {
         Node q = search(xCode);
         remove(q);
     }
-    public void sortByRCode(){
-        Node pi, pj;
-        Reader t;
-        for(pi=head; pi!=null; pi=pi.next){
-            for(pj=pi.next; pj!=null; pj=pj.next){
-                if(pj.info.getRcode().compareTo(pi.info.getRcode())<0){
-                    t = pi.info;
-                    pi.info = pj.info;
-                    pj.info = t;
-                }
-            }
-        }
-    }
 }
