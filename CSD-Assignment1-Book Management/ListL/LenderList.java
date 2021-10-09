@@ -39,25 +39,4 @@ public class LenderList {
         }
         System.out.println();
     }
-    public void sortByBCode(){
-        NodeL pi, pj;
-        Lending t;
-        for(pi=head; pi!=null; pi=pi.next){
-            for(pj=pi.next; pj!=null; pj=pj.next){
-                if(pj.info.getBcode().compareTo(pi.info.getBcode())<0){
-                    t = pi.info;
-                    pi.info = pj.info;
-                    pj.info = t;
-                }
-            }
-        }
-    }
-    public NodeL search(String xCode){
-        NodeL p=head;
-        while(p!=null){
-           if(p.info.getBcode().equals(xCode)) return(p);
-            p=p.next;
-        }
-       return(null);
-    }
 }
