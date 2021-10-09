@@ -165,27 +165,4 @@ public class BookList {
             }
         }
     }
-    // sort linked list
-//    public void sort() {
-//        sorted = null;
-//        NodeB p = head;
-//
-//        while (p != null) {
-//            NodeB next = p.next;
-//            if (sorted == null || sorted.info.compareTo(p.info) <= 0) {
-//                p.next = sorted;
-//                sorted = p;
-//            } else {
-//                NodeB q = sorted;
-//            /* Locate the node before the point of insertion */
-//                while (q.next != null && q.next.info.compareTo(p.info) > 0){
-//                    q = q.next;
-//            }   
-//            p.next = q.next;
-//            q.next = p;
-//        }
-//            p = next;
-//        }
-//        head = sorted;
-//    }
 }
